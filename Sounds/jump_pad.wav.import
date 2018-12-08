@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/jump_pad.wav-e8bd9cb4e1d1e02cafc49524f88d8686.sample"
+
+[deps]
+
+source_file="res://Sounds/jump_pad.wav"
+dest_files=[ "res://.import/jump_pad.wav-e8bd9cb4e1d1e02cafc49524f88d8686.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
