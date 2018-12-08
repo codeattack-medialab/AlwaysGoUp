@@ -8,13 +8,26 @@ var on_floor = true
 var on_air_time = 0
 var landing = 0
 var dead_zone = 100000
+var dead = false
 
 var velocity = Vector2()
 
 func _process(delta):
 	$Camera.limit_bottom = dead_zone
 
+	if dead:
+		position.y = dead_zone
+		return
+	if position.y > dead_zone:
+		dead = true
+		$Sprites.visible = false
+		$Death.emitting = true
+		$EndTimer.start()
+
 func _physics_process(delta):
+	if dead:
+		return
+
 	velocity.x = 0
 	velocity.y += gravity
 
@@ -48,3 +61,6 @@ func _physics_process(delta):
 func jump_pad_kick(force):
 	velocity.y = -force
 	$Anim.play("jump")
+
+func _on_end_timeout():
+	Global.go_to_scene("res://Start.tscn")

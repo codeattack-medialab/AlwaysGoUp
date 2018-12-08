@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://character.gd" type="Script" id=1]
 [ext_resource path="res://Animals/chick.png" type="Texture" id=2]
@@ -81,6 +81,71 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 33 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Gradient" id=4]
+
+offsets = PoolRealArray( 0, 0.16568, 0.615385, 1 )
+colors = PoolColorArray( 0.917969, 0.384579, 0.0645447, 1, 0.941406, 0.0514832, 0.0514832, 0.734824, 0.226562, 0.0327454, 0.0327454, 0.469608, 0.875, 0.0922852, 0.0922852, 0 )
+
+[sub_resource type="GradientTexture" id=5]
+
+flags = 4
+gradient = SubResource( 4 )
+width = 2048
+
+[sub_resource type="Curve" id=6]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.400844, 0.607422 ), -0.566681, -0.566681, 0, 0, Vector2( 1, 0.25293 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+
+flags = 4
+width = 2048
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1, 32, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 40.0
+flatness = 0.0
+gravity = Vector3( -300, 0, 0 )
+initial_velocity = 700.0
+initial_velocity_random = 0.5
+angular_velocity = 100.0
+angular_velocity_random = 0.6
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -100.0
+linear_accel_random = 0.2
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 20.0
+scale_random = 0.2
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 5 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angular Velocity", "Color", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Scale", "Spread" ]
+
 [node name="Character" type="KinematicBody2D"]
 
 input_pickable = false
@@ -155,5 +220,37 @@ playback_speed = 1.0
 anims/jump = SubResource( 2 )
 anims/landing = SubResource( 3 )
 blend_times = [  ]
+
+[node name="Death" type="Particles2D" parent="." index="5"]
+
+rotation = -1.5708
+emitting = false
+amount = 500
+lifetime = 3.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.85
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 2000, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 8 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform" ]
+
+[node name="EndTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="EndTimer" to="." method="_on_end_timeout"]
 
 
