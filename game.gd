@@ -10,7 +10,7 @@ func _process(delta):
 	var velocity = 50
 	if $Character.position.y - fire_position < -1000:
 		velocity = 600
-	elif $Character.position.y - fire_position < -500:
+	elif $Character.position.y - fire_position < -450:
 		velocity = 320
 
 	fire_position -= velocity * delta
