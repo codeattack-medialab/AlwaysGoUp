@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/city_bg_002.png-0e1244a250a679a06a76890f64aaaf14.stex"
+path="res://.import/building_001.png-1332bf7bde224cba867bffed796b878a.stex"
 
 [deps]
 
-source_file="res://Background2/city_bg_002.png"
-dest_files=[ "res://.import/city_bg_002.png-0e1244a250a679a06a76890f64aaaf14.stex" ]
+source_file="res://Background/building_001.png"
+dest_files=[ "res://.import/building_001.png-1332bf7bde224cba867bffed796b878a.stex" ]
 
 [params]
 

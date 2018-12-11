@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skill-desc_0002_far-buildings.png-9ba82ab60bc9c497761190b5e34f478e.stex"
+path="res://.import/city_bg_002.png-934df3c911fe08a845770c42f27f3e18.stex"
 
 [deps]
 
-source_file="res://Background/skill-desc_0002_far-buildings.png"
-dest_files=[ "res://.import/skill-desc_0002_far-buildings.png-9ba82ab60bc9c497761190b5e34f478e.stex" ]
+source_file="res://Background/city_bg_002.png"
+dest_files=[ "res://.import/city_bg_002.png-934df3c911fe08a845770c42f27f3e18.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
