@@ -10,5 +10,5 @@ func _ready():
 	pass
 
 func _on_HUD_height_change(new_height):
-	self.text = new_height
-	$"../../../AnimationPlayer".play("height_anim")
+	self.text = str(new_height)
+	$"../AnimationPlayer".play("height_anim")
