@@ -1,11 +1,13 @@
 extends Node
 
 var fire_position = 1140
-var best_score = 0
+var best_height = 0
 var character_dead = false
+var start_point = 0
 
 func _ready():
 	randomize()
+	start_point = $Character.position.y
 	$Fire.position.y = fire_position
 	$HUD.update_height(0)
 
@@ -25,7 +27,7 @@ func _process(delta):
 			$HUD.record_time()
 			character_dead = true
 	else:
-		var new_score = int((700 - $Character.position.y) / 64)
-		if new_score > best_score:
-			best_score = new_score
-			$HUD.update_height(best_score)
+		var new_height = int((start_point - $Character.position.y) / 64)
+		if new_height > best_height:
+			best_height = new_height
+			$HUD.update_height(best_height)
