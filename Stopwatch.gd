@@ -3,7 +3,8 @@ extends Label
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-onready var milliscounter = OS.get_ticks_msec()
+onready var init_time = OS.get_ticks_msec()
+var milliscounter
 var pause = false
 
 func _ready():
@@ -26,7 +27,7 @@ func _on_HUD_time_finish():
 	format_stopwatch()
 
 func format_stopwatch():
-	milliscounter = OS.get_ticks_msec()
+	milliscounter = OS.get_ticks_msec() - init_time
 	var remainingMillis = milliscounter % 1000
 	var seconds = (milliscounter / 1000) % 60
 	var minutes = (seconds / 60) % 60
