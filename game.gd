@@ -40,3 +40,6 @@ func _on_map_end():
 	map_end = true
 	$Fire/AnimationPlayer.play("fade_out")
 	$HUD.record_time(best_height)
+
+func _on_fire_finished(anim_name):
+	Global.go_to_scene("res://End.tscn")
