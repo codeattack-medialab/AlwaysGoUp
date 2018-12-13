@@ -4,6 +4,7 @@ var fire_position = 1140
 var best_height = 0
 var character_dead = false
 var start_point = 0
+var map_end = false
 
 func _ready():
 	randomize()
@@ -12,6 +13,9 @@ func _ready():
 	$HUD.update_height(0)
 
 func _process(delta):
+	if map_end:
+		return
+
 	var velocity = 50
 	if $Character.position.y - fire_position < -1000:
 		velocity = 600
@@ -31,3 +35,8 @@ func _process(delta):
 		if new_height > best_height:
 			best_height = new_height
 			$HUD.update_height(best_height)
+
+func _on_map_end():
+	map_end = true
+	$Fire/AnimationPlayer.play("fade_out")
+	$HUD.record_time(best_height)
