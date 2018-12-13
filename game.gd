@@ -24,7 +24,7 @@ func _process(delta):
 
 	if $Character.dead:
 		if not character_dead:
-			$HUD.record_time()
+			$HUD.record_time(best_height)
 			character_dead = true
 	else:
 		var new_height = int((start_point - $Character.position.y) / 64)
