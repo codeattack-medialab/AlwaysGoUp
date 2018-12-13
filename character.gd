@@ -59,8 +59,11 @@ func _physics_process(delta):
 		$Anim.play("jump")
 
 func jump_pad_kick(force):
+	if dead:
+		return false
 	velocity.y = -force
 	$Anim.play("jump")
+	return true
 
 func _on_end_timeout():
 	Global.go_to_scene("res://Start.tscn")
