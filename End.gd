@@ -34,6 +34,9 @@ func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 	$Camera2D.position.y -= 75 * delta
+	if Input.is_action_just_pressed("start") or Input.is_action_just_pressed("jump"):
+		Global.go_to_scene("res://Start.tscn")
+		
 
 func draw_list():
 	var nloops
