@@ -66,4 +66,4 @@ func jump_pad_kick(force):
 	return true
 
 func _on_end_timeout():
-	Global.go_to_scene("res://Start.tscn")
+	Global.go_to_scene("res://End.tscn")
