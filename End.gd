@@ -10,7 +10,7 @@ var visualnodes_list = Array()
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	
+	"""
 	Global.scores.append({name = 'AAA', meters = 275, ms = 96000})
 	Global.scores.append({name = 'BBB', meters = 275, ms = 99000})
 	Global.scores.append({name = 'CCC', meters = 205, ms = 90000})
@@ -21,8 +21,9 @@ func _ready():
 	Global.scores.append({name = 'HHH', meters = 102, ms = 68000})
 	Global.scores.append({name = 'III', meters = 88, ms = 51000})
 	Global.scores.append({name = 'JIJI-JAJA', meters = 320, ms = 139900})
+	"""
 	###
-	Global.scores.append({name = 'FRA', meters = 275, ms = 95000})
+	Global.scores.append({name = "", meters = Global.current_score.meters, ms = Global.current_score.ms})
 	Global.scores.sort_custom(self, "sort_scores")
 	draw_list()
 	"""
@@ -48,7 +49,8 @@ func draw_list():
 		nloops = Global.scores.size()
 	for n in range(0, nloops):
 		var label_item = visualnodes_list[n].get_node("ScoreLine/NameLabel")
-		label_item.text = Global.scores[n].name
+		# la siguiente asignación debería ser con el Global.scores[n].name en el futuro
+		label_item.text = "#" + str(n+1)
 		label_item = visualnodes_list[n].get_node("ScoreLine/MetersLabel")
 		label_item.text = str(Global.scores[n].meters)
 		label_item = visualnodes_list[n].get_node("ScoreLine/TimeLabel")
