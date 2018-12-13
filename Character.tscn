@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://character.gd" type="Script" id=1]
 [ext_resource path="res://Animals/chick.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Animals/pig.png" type="Texture" id=9]
 [ext_resource path="res://Animals/zebra.png" type="Texture" id=10]
 [ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/quemado04.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -146,7 +147,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Scale", "Spread" ]
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -210,7 +211,16 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Anim" type="AnimationPlayer" parent="." index="4"]
+[node name="DeadSound" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Anim" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -221,7 +231,7 @@ anims/jump = SubResource( 2 )
 anims/landing = SubResource( 3 )
 blend_times = [  ]
 
-[node name="Death" type="Particles2D" parent="." index="5"]
+[node name="Death" type="Particles2D" parent="." index="6"]
 
 rotation = -1.5708
 emitting = false
@@ -244,7 +254,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform" ]
 
-[node name="EndTimer" type="Timer" parent="." index="6"]
+[node name="EndTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
 wait_time = 4.0

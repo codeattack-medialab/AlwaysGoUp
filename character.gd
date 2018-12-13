@@ -23,6 +23,7 @@ func _process(delta):
 		$Sprites.visible = false
 		$Death.emitting = true
 		$EndTimer.start()
+		$DeadSound.play()
 
 func _physics_process(delta):
 	if dead:
