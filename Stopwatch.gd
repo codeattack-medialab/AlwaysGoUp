@@ -22,13 +22,15 @@ func _process(delta):
 	else:
 		format_stopwatch()
 
-func _on_HUD_time_finish():
+func _on_HUD_time_finish(best_score):
 	pause = true
 	format_stopwatch()
+	Global.current_score.meters = best_score
+	Global.current_score.ms = milliscounter
 
 func format_stopwatch():
 	milliscounter = OS.get_ticks_msec() - init_time
 	var remainingMillis = milliscounter % 1000
 	var seconds = (milliscounter / 1000) % 60
-	var minutes = (seconds / 60) % 60
+	var minutes = (milliscounter / (1000 * 60)) # % 60 -> añadir si quieres meter horas 
 	self.text = "%02d:%02d:%03d" % [minutes, seconds, remainingMillis]
