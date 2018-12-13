@@ -9,7 +9,8 @@ func _on_body_entered(body):
 	if body.jump_pad_kick(force):
 		jumping = true
 		$Sprites/AnimationPlayer.play("activate")
-		$Sound.play()
+		var sound = "Sounds/Sound%d" % round(rand_range(1, 2))
+		get_node(sound).play()
 
 func _on_animation_finished(anim_name):
 	jumping = false

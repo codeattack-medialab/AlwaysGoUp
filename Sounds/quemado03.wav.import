@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/quemado03.wav-c51e91706269fe8a5507eb2a8a87e0cb.sample"
+
+[deps]
+
+source_file="res://Sounds/quemado03.wav"
+dest_files=[ "res://.import/quemado03.wav-c51e91706269fe8a5507eb2a8a87e0cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

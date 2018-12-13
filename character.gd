@@ -23,7 +23,8 @@ func _process(delta):
 		$Sprites.visible = false
 		$Death.emitting = true
 		$EndTimer.start()
-		$DeadSound.play()
+		var sound = "DeathSounds/Death%d" % round(rand_range(1, 2))
+		get_node(sound).play()
 
 func _physics_process(delta):
 	if dead:
@@ -56,7 +57,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and on_floor:
 		velocity.y = -_jump_speed
 		$JumpSound.play()
-		$JumpSound.pitch_scale = rand_range(0.8, 1.1)
+		$JumpSound.pitch_scale = rand_range(1.3, 1.9)
 		$Anim.play("jump")
 
 func jump_pad_kick(force):
