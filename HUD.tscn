@@ -16,6 +16,9 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 70.0155 ]
+}
 
 [node name="Control" type="Control" parent="." index="0"]
 
@@ -48,10 +51,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 40.0
-margin_top = 28.0
-margin_right = 110.0
-margin_bottom = 61.0
+margin_left = 35.0
+margin_top = 25.0
+margin_right = 105.0
+margin_bottom = 88.0
 rect_pivot_offset = Vector2( 35, 16.5 )
 rect_clip_content = true
 mouse_filter = 2
@@ -59,13 +62,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
-text = "1234"
+text = "49"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 4 )
 _sections_unfolded = [ "Margin", "Rect", "Size Flags", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="UnitLabel" type="Label" parent="Control" index="2"]
 
@@ -73,10 +79,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 115.0
-margin_top = 29.0
-margin_right = 204.0
-margin_bottom = 57.0
+margin_left = 120.0
+margin_top = 42.0
+margin_right = 222.0
+margin_bottom = 74.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -89,6 +95,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Rect", "Size Flags", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TimeLabel" type="Label" parent="Control" index="3"]
 
@@ -96,10 +105,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1030.0
-margin_top = 30.0
-margin_right = 1131.0
-margin_bottom = 58.0
+margin_left = 1010.0
+margin_top = 42.0
+margin_right = 1127.0
+margin_bottom = 74.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -112,6 +121,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Stopwatch" type="Label" parent="Control" index="4"]
 
@@ -120,9 +132,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -150.0
-margin_top = 30.0
+margin_top = 40.0
 margin_right = -10.0
-margin_bottom = 58.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 140, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -139,6 +151,9 @@ lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 7 )
 _sections_unfolded = [ "Grow Direction", "Rect", "Size Flags", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="height_change" from="." to="Control/ScoreInMeters" method="_on_HUD_height_change"]
 
