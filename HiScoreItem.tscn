@@ -58,7 +58,7 @@ align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Size Flags" ]
+_sections_unfolded = [ "Margin", "Size Flags", "custom_colors" ]
 
 [node name="MetersLabel" type="Label" parent="ScoreLine" index="1"]
 
