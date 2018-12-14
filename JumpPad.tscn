@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://JumpPad.gd" type="Script" id=1]
 [ext_resource path="res://Scenery/spring.png" type="Texture" id=2]
 [ext_resource path="res://Scenery/sprung.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/jump_pad.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/dock.wav" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -38,7 +39,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 31.8558, 16.7045 )
 
-[node name="JumpPad" type="Node2D"]
+[node name="JumpPad" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 force = 3000
@@ -76,11 +77,22 @@ visible = false
 position = Vector2( 0, 15.5296 )
 shape = SubResource( 3 )
 
-[node name="Sound" type="AudioStreamPlayer" parent="." index="2"]
+[node name="Sounds" type="Node" parent="." index="2"]
+
+[node name="Sound1" type="AudioStreamPlayer" parent="Sounds" index="0"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Sound2" type="AudioStreamPlayer" parent="Sounds" index="1"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.8
 autoplay = false
 mix_target = 0
 bus = "Master"
