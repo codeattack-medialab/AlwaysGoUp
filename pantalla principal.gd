@@ -11,5 +11,5 @@ func _on_animation_finished(anim_name):
 	Global.go_to_scene("res://Game.tscn")
 
 func _process(delta):
-	if Input.is_action_just_pressed("start"):
+	if Input.is_action_just_pressed("start") or Input.is_action_just_pressed("jump"):
 		start_game()
