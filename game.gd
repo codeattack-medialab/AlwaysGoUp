@@ -11,7 +11,7 @@ func _ready():
 	start_point = $Character.position.y
 	$Fire.position.y = fire_position
 	$HUD.update_height(0)
-	$Music.fade_in()
+	$Music.fade_in(1)
 
 func _process(delta):
 	if map_end:
@@ -30,7 +30,7 @@ func _process(delta):
 	if $Character.dead:
 		if not character_dead:
 			$HUD.record_time(best_height)
-			$Music.fade_out()
+			$Music.fade_out(4)
 			character_dead = true
 	else:
 		var new_height = int((start_point - $Character.position.y) / 64)
