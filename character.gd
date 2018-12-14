@@ -23,7 +23,7 @@ func _process(delta):
 		$Sprites.visible = false
 		$Death.emitting = true
 		$EndTimer.start()
-		var sound = "DeathSounds/Death%d" % round(rand_range(1, 2))
+		var sound = "DeathSounds/Death%d" % round(rand_range(1, 4))
 		get_node(sound).play()
 
 func _physics_process(delta):

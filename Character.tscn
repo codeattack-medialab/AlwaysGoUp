@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://character.gd" type="Script" id=1]
 [ext_resource path="res://Animals/chick.png" type="Texture" id=2]
@@ -10,9 +10,11 @@
 [ext_resource path="res://Animals/parrot.png" type="Texture" id=8]
 [ext_resource path="res://Animals/pig.png" type="Texture" id=9]
 [ext_resource path="res://Animals/zebra.png" type="Texture" id=10]
-[ext_resource path="res://Sounds/salto01.wav" type="AudioStream" id=11]
-[ext_resource path="res://Sounds/quemado04.wav" type="AudioStream" id=12]
-[ext_resource path="res://Sounds/quemado03.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/jump04.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/fail01.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/fail02.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/fail03.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/fail04.wav" type="AudioStream" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -255,8 +257,6 @@ bus = "Master"
 
 [node name="DeathSounds" type="Node" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="Death1" type="AudioStreamPlayer" parent="DeathSounds" index="0"]
 
 stream = ExtResource( 12 )
@@ -269,6 +269,24 @@ bus = "Master"
 [node name="Death2" type="AudioStreamPlayer" parent="DeathSounds" index="1"]
 
 stream = ExtResource( 13 )
+volume_db = -6.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Death3" type="AudioStreamPlayer" parent="DeathSounds" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = -6.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Death4" type="AudioStreamPlayer" parent="DeathSounds" index="3"]
+
+stream = ExtResource( 15 )
 volume_db = -6.0
 pitch_scale = 1.0
 autoplay = false
