@@ -7,18 +7,10 @@
 [ext_resource path="res://Music.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 30
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 3 )
-_sections_unfolded = [ "Font", "Resource", "Settings" ]
 
 [sub_resource type="Animation" id=2]
-
-length = 1.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -46,117 +38,55 @@ tracks/1/keys = {
 
 [sub_resource type="Theme" id=3]
 
-
 [sub_resource type="ShortCut" id=4]
 
-
 [sub_resource type="DynamicFont" id=5]
-
 size = 75
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 3 )
-_sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="pantalla principal" type="Node" index="0"]
-
+[node name="pantalla principal" type="Node"]
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause" ]
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
-
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Sprite2" type="Sprite" parent="CanvasLayer" index="0"]
-
+[node name="Sprite2" type="Sprite" parent="CanvasLayer"]
 scale = Vector2( 0.501461, 0.46148 )
 texture = ExtResource( 2 )
 centered = false
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
-[node name="Instrucciones" type="Label" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Instrucciones" type="Label" parent="."]
 margin_left = 696.0
 margin_top = 636.0
 margin_right = 981.0
 margin_bottom = 678.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "Salta y muévete con las flechas"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." index="2"]
-
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -4
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -5.0
 margin_right = 4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.119202, 0.492188, 0.229932, 0.707176 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/ColorRect" index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/ColorRect"]
 anims/transicion = SubResource( 2 )
-blend_times = [  ]
 
-[node name="Container" type="Container" parent="." index="3"]
-
-anchor_left = 0.0
+[node name="Container" type="Container" parent="."]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_bottom = 68.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags" ]
 
-[node name="Map1" type="Button" parent="Container" index="0"]
-
+[node name="Map1" type="Button" parent="Container"]
 light_mask = 0
 anchor_left = 0.5
 anchor_top = 0.5
@@ -166,63 +96,22 @@ margin_left = -91.0
 margin_top = -34.0
 margin_right = 91.0
 margin_bottom = 34.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 theme = SubResource( 3 )
-toggle_mode = false
 action_mode = 0
-enabled_focus_mode = 2
 shortcut = SubResource( 4 )
-group = null
-flat = false
 align = 0
-_sections_unfolded = [ "Anchor", "Material", "Theme", "Visibility", "custom_styles" ]
 
-[node name="Label" type="Label" parent="Container/Map1" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Label" type="Label" parent="Container/Map1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 5 )
 text = "¡A saltar!"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Hint", "Margin", "Mouse", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="4"]
-
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 0.0
-pitch_scale = 1.0
 autoplay = true
-mix_target = 0
-bus = "Master"
 script = ExtResource( 5 )
 
-[node name="Tween" type="Tween" parent="Music" index="0"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
+[node name="Tween" type="Tween" parent="Music"]
 [connection signal="animation_finished" from="CanvasLayer2/ColorRect/AnimationPlayer" to="." method="_on_animation_finished"]
-
 [connection signal="pressed" from="Container/Map1" to="." method="_on_Map1_pressed"]
-
-

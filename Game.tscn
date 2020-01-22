@@ -9,76 +9,39 @@
 [ext_resource path="res://Music.gd" type="Script" id=7]
 
 [sub_resource type="Gradient" id=1]
-
 offsets = PoolRealArray( 0, 0.334646, 1 )
 colors = PoolColorArray( 1, 0.923676, 0.761719, 1, 0.914062, 0.559796, 0.00714111, 1, 0.886719, 0, 0, 0.364627 )
 
 [sub_resource type="GradientTexture" id=2]
-
-flags = 4
 gradient = SubResource( 1 )
-width = 2048
 
 [sub_resource type="Curve" id=3]
-
-min_value = 0.0
-max_value = 1.0
-bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.5 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=4]
-
-flags = 4
-width = 2048
 curve = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=5]
-
-render_priority = 0
-trail_divisor = 1
 emission_shape = 2
 emission_box_extents = Vector3( 1, 720, 1 )
-flag_align_y = false
-flag_rotate_y = false
 flag_disable_z = true
 spread = 0.0
-flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 60.0
 initial_velocity_random = 0.3
-angular_velocity = 0.0
-angular_velocity_random = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 30.0
 linear_accel_random = 0.3
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
 angle = 45.0
-angle_random = 0.0
 scale = 30.0
 scale_random = 0.2
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Scale", "Spread" ]
 
 [sub_resource type="Animation" id=6]
-
 resource_name = "fade_out"
 length = 2.0
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -93,72 +56,33 @@ tracks/0/keys = {
 }
 
 [node name="Game" type="Node"]
-
 script = ExtResource( 1 )
 
-[node name="HUD" parent="." index="0" instance=ExtResource( 2 )]
+[node name="HUD" parent="." instance=ExtResource( 2 )]
 
-[node name="ParallaxBackground" parent="." index="1" instance=ExtResource( 3 )]
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
 
-[node name="TileMap" parent="." index="2" instance=ExtResource( 4 )]
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
 
-[node name="Character" parent="." index="3" instance=ExtResource( 5 )]
-
+[node name="Character" parent="." instance=ExtResource( 5 )]
 position = Vector2( 544.953, 656.142 )
 
-[node name="Fire" type="Particles2D" parent="." index="4"]
-
+[node name="Fire" type="Particles2D" parent="."]
 position = Vector2( 708.417, 828.058 )
 rotation = -1.5708
-emitting = true
 amount = 1600
 lifetime = 1.8
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
 visibility_rect = Rect2( -40, -750, 220, 1500 )
-local_coords = true
-draw_order = 0
 process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fire" index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fire"]
 anims/fade_out = SubResource( 6 )
-blend_times = [  ]
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="5"]
-
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -20.0
-pitch_scale = 1.0
 autoplay = true
-mix_target = 0
-bus = "Master"
 script = ExtResource( 7 )
 
-[node name="Tween" type="Tween" parent="Music" index="0"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
+[node name="Tween" type="Tween" parent="Music"]
 [connection signal="animation_finished" from="Fire/AnimationPlayer" to="." method="_on_fire_finished"]
-
-

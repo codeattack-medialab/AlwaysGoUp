@@ -5,41 +5,15 @@
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-scroll_offset = Vector2( 0, 0 )
-scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = false
-
-[node name="City" type="ParallaxLayer" parent="." index="0"]
-
+[node name="City" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0, 0 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
 
-[node name="Sprite" type="Sprite" parent="City" index="0"]
-
+[node name="Sprite" type="Sprite" parent="City"]
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Building" type="ParallaxLayer" parent="." index="1"]
-
+[node name="Building" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.4, 0.4 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
 
-[node name="Sprite" type="Sprite" parent="Building" index="0"]
-
+[node name="Sprite" type="Sprite" parent="Building"]
 position = Vector2( 420, -140 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-

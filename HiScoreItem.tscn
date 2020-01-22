@@ -3,129 +3,47 @@
 [ext_resource path="res://UI/Fonts/Serreria-Extravagante.DynamicFont.tres" type="DynamicFont" id=1]
 
 [node name="HiScoreItem" type="PanelContainer"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 550.0
 margin_bottom = 38.0
 rect_min_size = Vector2( 0, 28 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "Theme", "custom_styles" ]
 
-[node name="ScoreLine" type="HBoxContainer" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ScoreLine" type="HBoxContainer" parent="."]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 543.0
 margin_bottom = 33.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="NameLabel" type="Label" parent="ScoreLine" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="NameLabel" type="Label" parent="ScoreLine"]
 margin_right = 74.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
 custom_fonts/font = ExtResource( 1 )
 text = "#1"
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Size Flags", "custom_colors" ]
 
-[node name="MetersLabel" type="Label" parent="ScoreLine" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MetersLabel" type="Label" parent="ScoreLine"]
 margin_left = 78.0
 margin_right = 227.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="UnitsLabel" type="Label" parent="ScoreLine" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="UnitsLabel" type="Label" parent="ScoreLine"]
 margin_left = 231.0
 margin_right = 380.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
 text = "metros"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="TimeLabel" type="Label" parent="ScoreLine" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TimeLabel" type="Label" parent="ScoreLine"]
 margin_left = 384.0
 margin_right = 536.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
 text = "09:09:157"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Size Flags" ]
-
-
